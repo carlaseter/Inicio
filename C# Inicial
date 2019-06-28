@@ -1,0 +1,1313 @@
+C# INICIAL POR CARLA SETER:
+Todos progamas/exercicios (a ordem de complexidade é aleatoria).
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: 20alg
+
+using System;
+
+namespace _20alg
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] elementos = new int[20];
+            int indice = 0;
+            Random rn = new Random();
+
+            while(indice < 20)
+            {
+              elementos[indice] = rn.Next(1,50);
+              Console.WriteLine("No indice: " + indice + " O valor é: " + elementos[indice]);
+              indice++;
+            }
+            
+            int s = 0;
+            int stotal = 0;
+
+            for(indice = 0; indice < 10; indice++)
+            {
+                
+                s = (elementos[indice] - elementos[19 - indice] + stotal);
+                stotal = s;
+                
+            }
+
+            Console.WriteLine("O valor e s é: " + s);
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: 3 Matrizes
+
+using System;
+
+namespace issoai
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] M = new int[5,5];
+            Random rn = new Random();
+
+            for(int a = 0; a < M.GetLength(0); a++)
+            {
+                for(int b = 0; b < M.GetLength(1); b++)
+                {
+                    M[a,b] = rn.Next(1,1000);
+                    Console.WriteLine("Matriz[" + a + ", " + b + "]: " + M[a,b]);
+                }
+            }
+
+            int[,] M2 = new int[5,5];
+            Random rn2 = new Random();
+
+            for(int a = 0; a < M2.GetLength(0); a++)
+            {
+                for(int b = 0; b < M2.GetLength(1); b++)
+                {
+                    M2[a,b] = rn2.Next(1,1000);
+                    Console.WriteLine("Matriz2[" + a + ", " + b + "]: " + M2[a,b]);
+                }
+            }
+
+            int[,] M3 = new int [5,5];
+
+            for(int a = 0; a < M3.GetLength(0); a++)
+                {
+                    for(int b = 0; b < M3.GetLength(0); b++)
+                    {
+                        M3[a,b] = M[a,b] + M[a,b];
+                        Console.WriteLine("Resultado Matriz 3[ " + a + ", " + b +"] :" + M3[a,b]); 
+                    }
+                }
+
+
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Como sortear números
+
+Random ranNum = new Random ();
+
+int i = randNum.Next(10); // colacar o tanto q quiser no () do next
+Console.WriteLine("Valor inteiro);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Coordenadas cartesianas (switch case)
+
+using System;
+
+namespace coordenadacart
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           double valor;
+
+           Console.WriteLine("Digite um valor: ");
+           valor = Convert.ToDouble(Console.ReadLine());
+
+         switch(valor)
+         {
+             case 0:
+             {
+                 Console.WriteLine("Coordenada na origem do sistema.");
+                 break;
+             }
+              case 1:
+             {
+                 Console.WriteLine("Coordenada no quadrante 1.");
+                 break;
+             }
+             case 2:
+             {
+                 Console.WriteLine("Coordenada no quadrante 2.");
+                 break;
+             }
+             case 3:
+             {
+                 Console.WriteLine("Coordenada no quadrante 3.");
+                 break;
+             }
+             case 4:
+             {
+                 Console.WriteLine("Coordenada no quadrante 4.");
+                 break;
+             }
+             case -1:
+             {
+                 Console.WriteLine("Coordenada sobre eixo X.");
+                 break;
+             }
+                case -2:
+             {
+                 Console.WriteLine("Coordenada sobre eixo Y.");
+                 break;
+             }
+
+            }  
+         }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Maças feira (if)
+
+using System;
+
+namespace feiramaca
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           int maca;
+           double custo;
+
+           Console.WriteLine("Digite o número de maças compradas: ");
+           maca = Convert.ToInt32(Console.ReadLine());
+
+           if(maca <= 12)
+           {
+              Console.WriteLine("As maças custaram quarenta centavos. "); 
+              custo = maca * 0.40;
+             Console.WriteLine("O custo total foi: " + custo);
+           }
+           if(maca > 12)
+           {
+               Console.WriteLine("As maças custaram trinta centavos. ");
+               custo = maca * 0.30;
+               Console.WriteLine("O custo total foi: " + custo);
+           }
+
+
+        }
+    }
+
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Hipotenusa
+
+using System;
+
+namespace Hipotenusa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+         double ca;
+         double co;
+         double hipotenusa;
+         double area;
+         double perimetro;
+
+         Console.WriteLine("Digite o valor do cateto oposto: ");
+         co = Convert.ToDouble (Console.ReadLine());
+
+         Console.Clear();
+
+         Console.WriteLine("Digite o valor do cateto adjacente: ");
+         ca = Convert.ToDouble (Console.ReadLine());
+
+         Console.Clear();
+
+         hipotenusa = Math.Sqrt(Math.Exp(co) + Math.Exp(ca));
+         Console.WriteLine("O valor da hipotenusa é: " + hipotenusa);
+
+
+         perimetro = co + ca + hipotenusa;
+         Console.WriteLine("O valor do perimetro é: " + perimetro);
+
+
+         area = (co * ca)/2;
+         Console.WriteLine("O valor da area é: " + area);
+
+         
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Loja de calçados (while)
+
+using System;
+
+namespace lojadecalcado
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           int c = 0;
+           int dia = 1;
+           int vendamaior = 0;
+           int diamaior = 0;
+           Random rand = new Random();
+
+            while(dia <= 30)
+                {
+                  Console.WriteLine("No dia: " + dia + " | Total de calçados que foram vendidos: " + c);
+                  c = rand.Next(01,100);
+                  dia++;
+
+                    if(c > vendamaior)
+                    {
+                        diamaior = dia;
+                        vendamaior = c;
+                    }
+                }
+
+
+                Console.WriteLine("A maior venda teve um total de " + vendamaior + " pares vendidos, e isso ocorreu no dia " + diamaior);
+                
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Lucro e percentual do lucro
+
+using System;
+
+namespace lucro
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        double lucro;
+        double precodevenda;
+        double custo;
+        double pdelucro;
+
+        Console.WriteLine("Digite o preço de custo do produto: ");
+        custo = Convert.ToDouble(Console.ReadLine());
+
+        Console.Clear();
+
+        Console.WriteLine("Digite o preço de venda do produto: ");
+        precodevenda = Convert.ToDouble(Console.ReadLine());
+
+        lucro = (precodevenda - custo);
+
+        Console.WriteLine("O lucro é: " + lucro);
+
+        pdelucro = (lucro/precodevenda)*100;
+        
+        Console.WriteLine("O percentual de lucro é: " + pdelucro);
+
+
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Matriz
+
+using System;
+
+namespace issoai
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] M = new int[3,4];
+            Random rn = new Random();
+
+            for(int a = 0; a < M.GetLength(0); a++)
+            {
+                for(int b = 0; b < M.GetLength(1); b++)
+                {
+                    M[a,b] = rn.Next(1,1000);
+                    Console.WriteLine("Matriz[" + a + ", " + b + "]: " + M[a,b]);
+                }
+            }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Multa e juros
+
+using System;
+
+namespace MultaJuros
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        double multa;
+        double pagar;
+        double porcentagem;
+        double valorTotal;
+
+        Console.WriteLine("Digite o valor da conta: ");
+        pagar = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Digite a porcentagem da multa: ");
+        porcentagem = Convert.ToDouble(Console.ReadLine());
+
+        Console.Clear();
+
+        multa = (pagar * porcentagem)/100;
+
+        Console.WriteLine("o valor da multa é: " + multa);
+        
+        valorTotal = (pagar + multa);
+
+        Console.WriteLine("O valor total é: " + valorTotal);
+
+
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Senha 1010
+
+using System;
+
+namespace senha1010
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int senha;
+
+            Console.WriteLine("Digite a senha: ");
+            senha = Convert.ToInt32(Console.ReadLine());
+
+            if(senha == 1010)
+            {
+                Console.WriteLine("Entrada permitida");
+            }
+            if(senha != 1010)
+            {
+                Console.WriteLine("Entrada não permitida");
+            }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Sortear senha letras
+
+using System;
+
+namespace gerarsenhaletrasnum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        // usar tabela ascii
+        
+            Random randNum = new Random ();
+
+            int cod = 0;
+            string senha = "";
+            string caracter = "";
+            bool aux = true;
+
+            for (int i = 0; i < 6; i++)
+            {
+                aux = true;
+                do
+                {
+                    cod = randNum.Next(48,90);    
+                    if ((cod >= 48 && cod <=57) || (cod >= 65 && cod <=90))
+                        aux = false;
+
+                } while (aux == true);
+                
+                caracter = ((char) cod).ToString();
+                senha = senha + caracter;
+            }
+
+            Console.WriteLine("Sua senha é: " + senha);
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Três condições
+
+using System;
+
+namespace tresvalores
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           int valor1;
+           int valor2;
+           int valor3;
+
+            Console.WriteLine("Digite o primeiro valor: ");
+            valor1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
+
+            Console.WriteLine("Digite o segundo valor: ");
+            valor2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
+
+            Console.WriteLine("Digite o terceiro valor: ");
+            valor3 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
+
+                if(valor1 > valor2 && valor1 > valor3)
+                {
+                    Console.WriteLine("o valor " + valor1 + " é o maior. ");
+                }
+                else if(valor1 < valor2 && valor1 < valor3)
+                {
+                    Console.WriteLine("o valor " + valor1 + " é o menor. ");
+                }
+                else if(valor1 > valor2 && valor1 < valor3)
+                {
+                    Console.WriteLine("o valor " + valor1 + " é o medio. ");
+                }
+                else if(valor1 < valor2 && valor1 > valor3)
+                {
+                    Console.WriteLine("o valor " + valor1 + " é o medio. ");
+                }
+
+
+
+                    if(valor2 > valor1 && valor2 > valor3)
+                    {
+                        Console.WriteLine("o valor " + valor2 + " é o maior. ");
+                    }
+                    else if(valor2 < valor1 && valor2 < valor3)
+                    {
+                        Console.WriteLine("o valor " + valor2 + " é o menor. ");
+                    }
+                    else if(valor2 > valor1 && valor2 < valor3)
+                    {
+                        Console.WriteLine("o valor " + valor2 + " é o medio. ");
+                    }
+                    else if(valor2 < valor1 && valor2 > valor3)
+                    {
+                        Console.WriteLine("o valor " + valor2 + " é o medio. ");
+                    }
+
+
+                        if(valor3 > valor1 && valor3 > valor2)
+                        {
+                            Console.WriteLine("o valor " + valor3 + " é o maior. ");
+                        }
+                        else if(valor3 < valor1 && valor3 < valor2)
+                        {
+                            Console.WriteLine("o valor " + valor3 + " é o menor. ");
+                        }
+                        else if(valor3 > valor1 && valor3 < valor2)
+                        {
+                            Console.WriteLine("o valor " + valor3 + " é o medio. ");
+                        }
+                        else if(valor3 < valor1 && valor3 > valor2)
+                        {
+                            Console.WriteLine("o valor " + valor3 + " é o medio. ");
+                        }
+       
+
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Idade para votar
+
+using System;
+
+namespace votaridadeano
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int anonasc;
+            
+
+            Console.WriteLine("Informe seu ano de nascimento: ");
+            anonasc = Convert.ToInt32(Console.ReadLine());
+
+            //em if nao se coloca ;
+
+            if(anonasc <= 2003)
+            {
+                Console.WriteLine("Você podera votar esse ano");
+            }
+            if(anonasc> 2003)
+            {
+                Console.WriteLine("você não podera votar esse ano");
+            }
+
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Alg random
+
+using System;
+
+namespace algrandom
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Informe o tamanho do vetor entre 0 e 100: ");
+            int tamanho = Convert.ToInt32(Console.ReadLine());
+
+            int [] vetor = new int[tamanho];
+            Random num = new Random();
+            int indice = 0;
+
+            while(indice < tamanho)
+            {
+            vetor[indice] = num.Next(1,30);
+            Console.WriteLine("O indice: " + indice + " tem o valor de " + vetor[indice]);
+            indice++;
+            }
+            
+            int maiorelemento = 0; //o minimo para o maior numero é 0
+            int menorelemento = 100; //o maximo para o maior numero é 100
+            indice = 0; //sempre zerar o indice pq se nao ele tera valor do ultimo while w n entrara no proximo laço
+
+            while( indice < tamanho )
+            {
+                if(vetor[indice] > maiorelemento)
+                    {
+                        maiorelemento = vetor[indice];
+                    }
+                 if(vetor[indice] < menorelemento)
+                    {
+                        menorelemento = vetor[indice];
+                    }
+                    indice++;
+            }
+            Console.WriteLine("O menor elemento do vetor é: " + menorelemento);
+            Console.WriteLine("O maior elemento do vetor é: " + maiorelemento);
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Aplicação
+
+using System;
+
+namespace aplicacaodostresemeio
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double montante;
+            double valor;
+            double porcentagem = 0.035;
+            int mes = 1;
+
+            Console.WriteLine("Digite aqui o valor: ");
+            valor = Convert.ToDouble(Console.ReadLine());
+
+            while(mes <= 12)
+            {
+                montante = valor * Math.Pow( 1 + porcentagem, mes);
+                mes++; 
+                Console.WriteLine("O valor é: " + Math.Round(montante,2));
+
+                
+
+            }
+              montante = valor * Math.Pow( 1 + porcentagem, mes); //por montante tanto aq como la em cima
+              Console.WriteLine("O rendimento foi: " +  (montante - valor)); // montante antes doo valor se nao da merda
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Armazem (vetor)
+
+using System;
+
+namespace vendaarm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] estoque = new int[10]{100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
+            int[] precodevenda = new int[10]{10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+            int[] valorunitario = new int[10]{5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+            int indice = 0;
+            Random rn = new Random();
+            int qtdvendida;
+
+            while(indice < 10)
+            { 
+            qtdvendida = rn.Next(1,100);
+            Console.WriteLine("Hoje foram vendidos: " +  qtdvendida  );
+            Console.WriteLine("Estoque atulizado: " + (estoque[indice] - qtdvendida)  );
+            Console.WriteLine("Faturamento: " + (qtdvendida * (precodevenda[indice] - valorunitario[indice])));
+            indice++;
+            }
+
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Desvio break (1)
+
+using System;
+
+namespace desviocontinue1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int soma = 0;
+
+            for ( int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Digite um numero positivo: ");
+                int num= Convert.ToInt32(Console.ReadLine());
+
+                if (num < 0)
+                continue; // se tiver apenas um comando n precisa de chaves, so qnd tem mais
+
+                soma = soma + num;
+
+                Console.WriteLine("Resultado da soma:" + soma);
+            }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Do break (1)
+
+using System;
+
+namespace dobreak1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool aux = true;
+            int soma = 0;
+
+            do
+            {
+                Console.WriteLine("Informe um valor igual ou menor que 20: ");
+                int valor = Convert.ToInt32(Console.ReadLine());
+                if (valor >=20)
+                {
+                    break;
+                }
+
+                soma = soma + valor;
+            }
+            while(aux == true);
+            Console.WriteLine("Valor da soma: " + soma);
+
+            //so vai parar qnd for maior q 20 porem n vai contar o numero maior q 20
+        
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Escolha abcd
+
+using System;
+
+namespace escolhaabcd
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string resposta;
+
+            Console.WriteLine("Quanto é 2+2? ");
+            
+           Console.WriteLine("A) O resultado é 9");
+           Console.WriteLine("B) O resultado é 3");
+           Console.WriteLine("C) O resultado é 4");
+           Console.WriteLine("D) O resultado é 7");
+
+           Console.WriteLine("Digite uma opção: ");
+
+           resposta = (Console.ReadLine());
+
+           if(resposta == "c")
+           {
+               Console.WriteLine("Sua resposta esta correta!");
+           }
+           if(resposta == "a")
+           {
+               Console.WriteLine("Sua resposta esta errada!");
+           }
+           if(resposta == "b")
+           {
+               Console.WriteLine("Sua resposta esta errada!");
+           }
+           if(resposta == "d")
+           {
+               Console.WriteLine("Sua resposta esta errada!");
+           }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Operação 
+
+using System;
+
+namespace exercicio1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           int t = 10;
+           int x = 5;
+           int y = 2;
+           int w = 2*t+4*x-3*y; 
+           Console.WriteLine("Resultado do valor de w: " + w);
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Fatorial
+
+using System;
+
+namespace aaa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        Console.WriteLine("Informe um número: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int inicio = num;
+            int fatorial = num;
+            while(num > 1)
+            {
+                fatorial = fatorial * (num - 1);
+                num = num - 1;
+            }
+
+            Console.WriteLine("o fatorial de " + inicio + " é: " + fatorial);
+            
+        }
+     }
+  }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Graus em fahrenheit
+
+using System;
+
+namespace grausfahrenheit
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        float f;
+        float c;
+        float d;
+        float b;
+
+
+        Console.WriteLine("Digite a temperatura em Fahrenheit: ");
+        f= Convert.ToSingle(Console.ReadLine());
+
+        d = 5;
+        b = 9;
+        c = (d/b)* (f -32);
+        
+        
+        Console.WriteLine("O valor em celsius é: " + c);
+
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Inserir elemento (foreach)
+
+using System;
+using System.Collections.Generic;
+
+namespace list
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List <int> lista = new List <int>(){-5,9,20,15,-65};
+            
+            Console.WriteLine("Digite um número: ");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            lista.Add(numero);
+            lista.Sort();
+
+            foreach(int aux in lista)
+            {
+                Console.WriteLine(aux);
+            }
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Lista
+
+using System;
+using System.Collections.Generic;
+
+namespace list
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List <int> lista = new List <int>(){1,5,2,6};
+
+            foreach (int aux in lista)
+            {
+                Console.WriteLine(aux);
+            }
+
+            lista.Remove(5);//remove elementos da lista
+            lista.Add(69);//adiciona um numero a lista
+            foreach (int aux in lista)
+            {
+                Console.WriteLine("lista atual:" + aux);
+            }
+            Console.WriteLine("tamanho da lista: " + lista.Count);
+
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Calculadora
+
+using System;
+
+namespace projnumero
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+            Console.Clear();
+           
+            Console.WriteLine("Digite um número: ");
+            Decimal _Numero1 = Convert.ToDecimal( Console.ReadLine() );
+            
+            Console.Clear();
+
+            Console.WriteLine("Digite outro número: ");
+            Decimal _Numero2 = Convert.ToDecimal( Console.ReadLine() );   
+         
+            Console.Clear();
+
+            Console.WriteLine("Digite qual será operação matematica: ");
+            String _OpMat = Console.ReadLine();
+
+            Console.Clear();
+
+             if(_OpMat == "Adição"){
+             Console.WriteLine ( _Numero1 + _Numero2 );
+            }
+            if(_OpMat == "Subtração"){
+             Console.WriteLine ( _Numero1 - _Numero2 );
+            }
+            if(_OpMat == "Multiplicação"){
+             Console.WriteLine ( _Numero1 * _Numero2 );
+            }
+            if (_OpMat == "Divisão"){
+             Console.WriteLine ( _Numero1 / _Numero2 );
+            }
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Número perfeito
+
+    
+using System;
+
+namespace npft
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero;
+            int resto;
+            int i = 1 ;
+            int soma = 0;
+
+            Console.WriteLine("Digite um número inteiro positivo: ");
+            numero = Convert.ToInt32(Console.ReadLine());
+
+            while (i < numero)
+            {
+               resto = numero % i ;
+                    
+                    if(resto == 0)
+                    {
+                        soma = soma + i;
+                    }
+                i = i + 1;
+            }
+
+                    if(soma == numero)
+                            {
+                                Console.WriteLine("o número é perfeito");
+                            }
+                            else
+                            {
+                                Console.WriteLine("o número não é perfeito");
+                            } 
+
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Números negativos
+
+using System;
+using System.Collections.Generic;
+
+namespace list
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List <int> lista = new List <int>(){-5,9,20,15,-65};
+
+            foreach (int aux in lista)
+            {
+                if(aux < 0)
+                {
+                    Console.WriteLine("0");
+                }
+                else
+                {
+                    Console.WriteLine(aux);
+                }
+
+            }            
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Para arrendondar para duas casas decimais
+
+using System;
+
+namespace sortearnumero
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random randNum = new Random ();
+
+            int cod = 0;
+            string senha = "";
+
+            for (int i = 0; i < 10; i++)
+            {
+                cod = randNum.Next(0,9);
+                senha = senha + Convert.ToString(cod);
+            }
+
+            Console.WriteLine("Sua senha é: " + senha);
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Primeiro progama
+
+using System;
+
+namespace PrimeiroApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string _Nome;
+            string _Cidade;
+
+            Console.Clear();
+            Console.WriteLine("Por favor, digite seu nome:");
+            _Nome = Console.ReadLine();
+            
+            Console.Clear();
+
+               Console.WriteLine("Por favor, digite a cidade onde nasceu:");
+               _Cidade = Console.ReadLine();
+
+               Console.Clear();
+
+
+
+            if(_Nome == "Carla"){
+                Console.WriteLine("AAAAAAAAsefode");
+            }
+            else if(_Nome == "Benjamin Arrola"){
+                Console.WriteLine("beija aí");
+            }
+            
+            else if(_Nome == "NumSei"){
+                Console.WriteLine("podepa");
+            }
+            
+              
+             if(_Cidade == "Marialva"){
+                Console.WriteLine("Marialvense");
+            }
+            else if(_Cidade == "Marierva"){
+                Console.WriteLine("Mariervense");
+            }
+            else if(_Cidade == "Mariarva"){
+                Console.WriteLine("Mariarvense");
+            }
+            else{
+                Console.WriteLine("o " + _Nome + " mora em " + _Cidade);            
+            }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Rept While
+
+    
+using System;
+
+namespace reptwhile1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 0;
+
+            while (i != 10)
+            {
+                Console.WriteLine("O valor de i é: " + i);
+                i++;  //i = i+1 (para sair do loop infinito ctrl c)
+            }
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Tabuada
+
+using System;
+
+namespace aaa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+               Console.WriteLine("informe um número: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            int soma = 0;
+            int i = 1;
+            while(i  < num)
+            {
+                if(num % i == 0)
+                {
+                    soma = soma + i;
+                }
+                i++;
+            }
+            if(soma == num)
+            {
+               Console.WriteLine("o número é perfeito.");  
+            }
+            else
+            {
+               Console.WriteLine("o número não é perfeito."); 
+            }
+
+            //exercicio3
+            Console.WriteLine("Informe um número de 1 a 10");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+            int multiplicador = 0;
+            while(multiplicador <= 10 )
+            {
+                Console.WriteLine("Tabuada " + (numero*multiplicador));
+
+                multiplicador++;
+            }
+ 
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Temperatura da antartida
+
+using System;
+
+namespace frioantart
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int media = 0;
+            int maior = 0;
+            int menor = 0;
+            int dia = 1;
+            int temp = 0;
+            Random randNum = new Random ();
+
+                while(dia <= 30)
+                {
+                  Console.WriteLine("Informe a temperatura do dia 1 ao dia 30: " + temp + " no dia " + dia);
+                  temp = randNum.Next(-40,10);
+                  media = media + temp;
+                  dia++;   
+                    
+                    if ( temp < 0)  
+                    {
+                        menor = menor + 1;
+                    }
+                        else 
+                        {
+                            maior = maior + 1;
+                        }
+                    
+                }
+
+            Console.WriteLine("A quantidade de dias que a temperatura foi menor que zero foi: " + menor);
+            Console.WriteLine("A quantidade de dias que a temperatura foi maior que zero foi: " + maior);
+
+            Console.WriteLine("A média das temperaturas é: " + media/30);
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Validação
+
+using System;
+using System.Collections.Generic;
+
+namespace list
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List <int> lista = new List <int>(){-5,9,20,15,-65};
+            bool validacao = false;
+
+            Console.WriteLine("Digite um valor x: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            foreach (int aux in lista)
+            {
+                if(x == aux)
+                {
+                    validacao =  true;
+                    Console.WriteLine("Seu numero esta na lista");
+                }
+            }
+
+            if(validacao == false)
+            {
+                Console.WriteLine("Numero não esta na lista");
+            }
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Vetor e lista
+
+using System;
+using System.Collections.Generic;
+
+namespace list
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List <int> lista = new List <int>(){5,9,20,15,65};
+           int pos = 0;
+
+            Console.WriteLine("Digite uma quantidade de elementos: ");
+            int qtd = Convert.ToInt32(Console.ReadLine());
+             int[] vetor = new int[qtd];
+
+            foreach (int aux in lista)
+            {
+               if(pos == qtd)
+               {
+                   break;
+               }
+                vetor[pos]=aux;
+                Console.WriteLine("valor do indice pos: " + vetor[pos]);
+                pos++;
+            }
+            
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Nome: Como declarar vetores
+
+using System;
+
+namespace vetorA
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          /*int[] vetor = new int[10]; //declaração vetor/ começa no 0 e termina um numero antes. ex se é 10, termina em 9
+
+          vetor[0] = 5;//pode declarar dessa forma ou diretamente no vetor/ ex: int[] vetor = new int[6]{1, 2, 3, 4, 5, 6};
+          vetor[1] = 5;
+          vetor[2] = 2;
+
+          Console.WriteLine("O valor do indice 0 é: " + vetor[0]); 
+
+          int[] vetor = new int[8]{1, 2, 3, 4, 5, 6, 7, 8};
+          int contador= 0;
+
+          while(contador < 8) //qqr coisa usar .Length para informar o tanto de elementos. ex: while( contador < vetor.Length ) em vez de por o 8(valor fixo)while(contador < 8)
+          {
+              Console.WriteLine(vetor[contador]);//contador agindo como indice
+              contador++;
+          }*/
+
+
+        }
+    }
+}
